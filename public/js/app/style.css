@@ -1,0 +1,82 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Roboto', sans-serif;
+}
+
+.block-color {
+}
+.banner-text {
+	color: #fff;
+	font-size: 50px;
+	z-index: 1;
+}
+
+.s-nav {
+	background: #3F51B5;
+}
+
+.s-nav .router-link-active {
+	font-weight: bold;
+}
+.s-nav ul li a {
+	color: #fff;
+	background: transparent;
+	font-size: 16px;
+}
+
+.s-nav ul li a:hover, .s-nav ul li a:active, .s-nav ul li a:visited, .s-nav ul li a:focus {
+	color: #fff;
+	text-decoration: underline;
+	background: transparent;
+}
+
+.s-nav a:hover, .s-nav a:active, .s-nav a:visited {
+	color: #fff;
+	background: transparent;
+}
+.uk-navbar-brand {
+	color: #fff;
+	padding: 0;
+}
+
+.banner {
+	position: relative;
+	color: #fff;
+	height: 300px;
+	background: url('../../images/banner.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.banner:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #3949AB;
+	opacity: .3;
+	z-index: 1;
+}
+
+.post-holder {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 40px;
+}
+.post-loader {
+	position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.post-image {
+	width: 100%;
+	height: 150px;
+	background-size: cover;
+	background-position: center;
+}
