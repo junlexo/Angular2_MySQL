@@ -1,4 +1,4 @@
-# Angular2-Blog-Express
+# Angular2-Express-MySQL Blog
 A simple blog application built with express, angular2, sequelize ORM.
 
 Demonstrates how to work with express, sequelize ORM and angular 2 together.
