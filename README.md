@@ -1,4 +1,4 @@
-# Angular2-Express-MySQL Blog
+# Angular2-MySQL Blog
 A simple blog application built with express, angular2, sequelize ORM.
 
 Demonstrates how to work with express, sequelize ORM and angular 2 together.
@@ -15,6 +15,10 @@ Demonstrates how to work with express, sequelize ORM and angular 2 together.
 - No Express routes are available as visual form, only defined in routes.php file
 - Any issues can be reported here.
 
+### How to run
+- npm install
+
+- nodemon ./bin/www
 
 # Thank you 
 
