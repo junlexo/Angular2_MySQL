@@ -16,7 +16,7 @@ Demonstrates how to work with express, sequelize ORM and angular 2 together.
 - Any issues can be reported here.
 
 ### How to run
-    git clone https://github.com/junlexo/Angular2_MySQL
+    git clone https://github.com/junlexo/Angular2_MySQL.git
     cd Angular2_MySQL
     npm install -g nodemon
     npm install
