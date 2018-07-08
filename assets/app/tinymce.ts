@@ -1,15 +1,17 @@
 import {ElementRef, Directive, NgZone} from '@angular/core';
 import {ControlGroup, Control} from '@angular/common';
 
+declare var tinymce: any;
 @Directive({
   inputs: ['tinyMce'],
   selector: '[tinyMce]'
 })
 export class TinyEditor {
   public tinyMce: ControlGroup;
+
   private id: string = Math.random().toString(36).substr(2, 5);
   private controlName: string;
-  private theControl: Control;
+  private theControl: any;
 
   public constructor(private elRef: ElementRef, private zone: NgZone) {
   }
@@ -17,9 +19,8 @@ export class TinyEditor {
   public ngOnInit(): void {
     setTimeout(() => {
       this.controlName = this.elRef.nativeElement.getAttribute('ngControl');
-      this.theControl = this.tinyMce.form.controls[this.controlName];
+      this.theControl = this.tinyMce.controls[this.controlName];
     });
-
     this.elRef.nativeElement.setAttribute('tiny-id', this.id);
   }
 
@@ -28,17 +29,9 @@ export class TinyEditor {
       tinymce.init({
         valid_elements: '*[*]',
         selector: '[tiny-id=' + this.id + ']',
-        height: 400,
-        theme: 'modern',
-        plugins: [
-          'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-          'searchreplace wordcount visualblocks visualchars code fullscreen',
-          'insertdatetime media nonbreaking save table contextmenu directionality',
-          'emoticons template paste textcolor colorpicker textpattern imagetools'
-        ],
-        toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-        toolbar2: 'print preview media | forecolor backcolor emoticons',
-        image_advtab: true,
+        schema: 'html5',
+        height: 150,
+        language : "en", // change language here
         setup: (editor): void => {
           editor.on('keyup change', () => {
             this.zone.run(() => {

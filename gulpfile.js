@@ -11,6 +11,7 @@ var vendor = 'public/js/vendor';
 
 var tsconfig = gulpTypescript.createProject('tsconfig.json');
 
+
 gulp.task('build-ts', function() {
     return gulp.src(appDev + '/**/*.ts')
         .pipe(gulpSourcemaps.init())
