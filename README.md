@@ -21,6 +21,8 @@ Demonstrates how to work with express, sequelize ORM and angular 2 together.
     npm install -g nodemon
     npm install
     nodemon ./bin/www
+
+### How to use
 # Thank you 
 
 # License
