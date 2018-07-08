@@ -16,10 +16,11 @@ Demonstrates how to work with express, sequelize ORM and angular 2 together.
 - Any issues can be reported here.
 
 ### How to run
-- npm install
-
-- nodemon ./bin/www
-
+    https://github.com/junlexo/Angular2_MySQL
+    cd Angular2_MySQL
+    npm install -g nodemon
+    npm install
+    nodemon ./bin/www
 # Thank you 
 
 # License
