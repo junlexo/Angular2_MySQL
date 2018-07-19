@@ -2,7 +2,8 @@ var gulp = require('gulp');
 
 var gulpTypescript = require('gulp-typescript');
 var gulpSourcemaps = require('gulp-sourcemaps');
-
+var sass = require("gulp-sass");
+var watchSass = require("gulp-watch-sass");
 var del = require('del');
 
 var appDev = 'assets/app/';
@@ -18,6 +19,17 @@ gulp.task('build-ts', function() {
         .pipe(gulpTypescript(tsconfig))
         .pipe(gulpSourcemaps.write())
         .pipe(gulp.dest(appProd));
+});
+
+gulp.task('sass', () => gulp.src([
+  appDev + '/styles/main.scss'])
+  .pipe(sass())
+  .pipe(gulp.dest(appProd)));
+ 
+gulp.task('sass:watch', () => {
+  gulp.watch([
+    appDev + '/**/*.scss'
+  ], ['sass']);
 });
 
 gulp.task('build-copy', function() {
@@ -66,5 +78,5 @@ gulp.task('watch', function() {
    gulp.watch(appDev + '**/*.{html,htm,css}', ['build-copy']); 
 });
 
-gulp.task('default', ['watch', 'build-ts', 'build-copy', 'vendor']);
+gulp.task('default', ['watch', 'build-ts', 'build-copy', 'vendor','sass:watch']);
 gulp.task('build', ['build-ts', 'build-copy', 'vendor']);

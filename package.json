@@ -49,9 +49,11 @@
   "devDependencies": {
     "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
     "gulp-serve": "^1.4.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.13.6",
+    "gulp-watch-sass": "^1.4.1",
     "systemjs-builder": "^0.15.19"
   }
 }
