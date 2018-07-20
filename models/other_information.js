@@ -35,7 +35,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER
     },
     language: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: true
