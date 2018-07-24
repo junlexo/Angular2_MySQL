@@ -32,7 +32,7 @@ app.use(function (req, res, next) {
     next();
 });
 app.use('/admin',adminRoutes);
-app.use('/users', userRoutes);
+app.use('/users', userRoutes); 
 app.use('/posts', postRoutes);
 app.use('/', appRoutes);
 

@@ -19,8 +19,7 @@ export class AuthService {
 								 }
 								 return response.json();
 							 })
-  }
-
+  }  
 	isAuthenticated() {
     return this.authenticated || localStorage.getItem('token');
   }

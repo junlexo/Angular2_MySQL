@@ -10,14 +10,23 @@ import {Router} from '@angular/router';
 		<banner [title]="title"></banner>
 		<div class="uk-grid">
 			<div class="uk-width-large-5-10 uk-container-center">
+			<div class="alert alert-success" *ngIf="saveSuccess">
+			    <strong>Success!</strong>
+			</div>
 			<form class="uk-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
 				<fieldset>
-						<legend>Login Form</legend>
+						<legend>Register Form</legend>
 						<div class="uk-form-row">
 						<div [hidden]="username.valid || !username.touched" class="uk-alert">
 							username is required
 						</div>
 							<input type="text" required ngControl="username" #username="ngForm" placeholder="" [ngClass]="{ 'uk-width-1-1': true }">
+						</div>
+						<div class="uk-form-row">
+						<div [hidden]="email.valid || !email.touched" class="uk-alert">
+							email is required
+						</div>
+							<input type="text" required ngControl="email" #email="ngForm" placeholder="" [ngClass]="{ 'uk-width-1-1': true }">
 						</div>
 						<div class="uk-form-row">
 							<div [hidden]="password.valid || !password.touched" class="uk-alert">
@@ -35,18 +44,20 @@ import {Router} from '@angular/router';
 	directives: [BannerComponent],
 	providers: [AuthService, HTTP_PROVIDERS]
 })
-export class LoginComponent {
-	title: string = 'Login';
+export class RegisterComponent {
+	title: string = 'Register';
+	saveSuccess: boolean;
 	constructor(private router: Router, private _authService: AuthService ) {
 
 	}
 	onSubmit(f) {
-		this._authService.signIn({username: f.value.username, password: f.value.password})
+		this._authService.register({username: f.value.username, email: f.value.email, password: f.value.password})
 				.subscribe(
 					data => {
-						localStorage.setItem('token', data.token);
-						localStorage.setItem('userId', data.userId);
-						this.router.navigate(['/create']);
+						if(data)
+							this.saveSuccess = true;
+						else
+							this.saveSuccess = false;
 					},
 					error => {
 						console.error(error);

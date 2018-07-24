@@ -20,7 +20,36 @@ export class AuthService {
 								 return response.json();
 							 })
   }
+  register(user: any)
+  {
+  	const body = JSON.stringify(user);
+    const headers = new Headers({'Content-Type': 'application/json' });
+    return this._http.post('http://localhost:3000/users/register', body, {headers: headers})
+               .map( response => {								 
+								 return response.json();
+							 });
+  }
+  getUserId(id){
+  	return this._http.get("http://localhost:3000/users/single/"+id)
+				   .map(res => res.json());
+  }
 
+  getUser(){
+  	return this._http.get("http://localhost:3000/users/all")
+				   .map(res => res.json());
+  }
+  removeUser(username){
+	  	return this._http.get("http://localhost:3000/users/remove/"+username)
+					   .map(res => res.json());	
+	}
+	changeAcount(user: any){
+		const body = JSON.stringify(user);
+	    const headers = new Headers({'Content-Type': 'application/json' });
+	    return this._http.post('http://localhost:3000/users/update', body, {headers: headers})
+	               .map( response => {								 
+									 return response.json();
+								 });
+	}
 	isAuthenticated() {
     return this.authenticated || localStorage.getItem('token');
   }
