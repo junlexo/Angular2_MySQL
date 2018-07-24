@@ -1,5 +1,5 @@
 var map = {
-    'app': 'js/app/client/app',
+    'app': 'js/app/admin/app',
     'rxjs': 'js/vendor/rxjs',
     '@angular': 'js/vendor/@angular',
     'ng2-bootstrap': 'js/vendor/ng2-bootstrap',

@@ -6,7 +6,7 @@ var sass = require("gulp-sass");
 var watchSass = require("gulp-watch-sass");
 var del = require('del');
 
-var appDev = 'assets/app/';
+var appDev = 'assets/*/app/';
 var appProd = 'public/js/app/';
 var vendor = 'public/js/vendor';
 
@@ -22,7 +22,7 @@ gulp.task('build-ts', function() {
 });
 
 gulp.task('sass', () => gulp.src([
-  appDev + '/styles/main.scss'])
+  appDev + '/styles/mainAdmin.scss',appDev + '/styles/mainClient.scss'])
   .pipe(sass())
   .pipe(gulp.dest(appProd)));
  
@@ -79,4 +79,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['watch', 'build-ts', 'build-copy', 'vendor','sass:watch']);
-gulp.task('build', ['build-ts', 'build-copy', 'vendor']);
+gulp.task('build', ['build-ts', 'build-copy', 'vendor','sass']);

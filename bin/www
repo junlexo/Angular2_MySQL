@@ -8,17 +8,18 @@ var app = require('../app');
 var debug = require('debug')('example:server');
 var http = require('http');
 var models = require("../models");
-
+// var gulp = require('gulp');
+// require('../gulpfile');
 /**
  * Get port from environment and store in Express.
  */
+// gulp.start('build');
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
-
 var server = http.createServer(app);
 
 /**

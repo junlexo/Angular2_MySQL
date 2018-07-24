@@ -36,10 +36,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     language: {
       type: DataTypes.STRING
-      allowNull: false,
-      validate: {
-        notEmpty: true
-      }
+      // allowNull: false,
+      // validate: {
+      //   notEmpty: true
+      // }
     }
   }
   );

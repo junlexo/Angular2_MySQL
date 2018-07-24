@@ -11,41 +11,41 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate: {
-        notEmpty: true
-      }
+      // validate: {
+      //   notEmpty: true
+      // }
     },
     address: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        notEmpty: true
-      }
+      // validate: {
+      //   notEmpty: true
+      // }
     },
     service_type: {
       type: DataTypes.INTEGER,
-      validate: {
-        notEmpty: true
-      }
+      // validate: {
+      //   notEmpty: true
+      // }
     },
     province: {
       type: DataTypes.INTEGER,
-      validate: {
-        notEmpty: true
-      }
+      // validate: {
+      //   notEmpty: true
+      // }
     },
     district: {
       type: DataTypes.INTEGER,
-      validate: {
-        notEmpty: true
-      }
+      // validate: {
+      //   notEmpty: true
+      // }
     },
     zone: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true
-      }
+      // allowNull: false,
+      // validate: {
+      //   notEmpty: true
+      // }
     },
     detail_direction: {
       type: DataTypes.STRING,
