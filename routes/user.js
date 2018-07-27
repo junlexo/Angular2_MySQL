@@ -43,25 +43,13 @@ router.get('/remove/:id', function(req, res, next){
         if(resp)
           return res.status(200).json({
             remove: true,
-            message: 'UserRemoved',        
+            message: 'User Removed',        
           });
         else
           return res.status(200).json({
             remove: false,
             message: 'Cannot Remove User',        
           });
-
-        // if (!user) {
-        //   req.flash('error', 'Username ' + req.query.user + ' not found.');
-        //   return next();
-        // }       
-        // user.remove(function (err) {
-        //   if (err) return res.err(err);
-        //   req.flash('success', 'User removed.');          
-        //   return res.status(200).json({
-        //     message: 'UserRemoved',        
-        //   });
-        // });
       });
 });
 router.post('/register', function(req, res) {

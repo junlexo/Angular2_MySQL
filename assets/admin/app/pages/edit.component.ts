@@ -20,7 +20,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 						<div [hidden]="username.valid || !username.touched" class="uk-alert">
 							username is required
 						</div>
-							<input type="text" required ngControl="username" #username="ngForm" placeholder="" [ngClass]="{ 'uk-width-1-1': true }" [(ngModel)]='singleUser.username'>
+							<input type="text" required ngControl="username" #username="ngForm" placeholder="" [ngClass]="{ 'uk-width-1-1': true }" [(ngModel)]='singleUser.username' disabled=true>
 						</div>
 						<div class="uk-form-row">
 						<div [hidden]="email.valid || !email.touched" class="uk-alert">
